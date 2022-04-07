@@ -46,12 +46,12 @@ class BirdsController < ApplicationController
     params.permit(:name, :species, :likes)
   end
 
-  def render_not_found_response
-    render json: { error: "Bird not found" }, status: :not_found
+  def find_bird
+    Bird.find(id: params[:id])
   end
 
-  def find_bird
-    Bird.find_by(id: params[:id])
+  def render_not_found_response
+    render json: { error: "Bird not found" }, status: :not_found
   end
 
 end
