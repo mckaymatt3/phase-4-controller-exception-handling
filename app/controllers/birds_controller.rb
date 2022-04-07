@@ -47,7 +47,7 @@ class BirdsController < ApplicationController
   end
 
   def find_bird
-    Bird.find(id: params[:id])
+    Bird.find(params[:id])
   end
 
   def render_not_found_response
